@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Please Login To Valencia Study Center:</h1>
+<form th:action="@{/loginProcess}" th:object="${student}" th:method="post">
+    <label>Please Enter Your Valencia Email</label>
+    <input type="email" name="mail" required/><br><br>
+    <label>Please Enter Your First Name:</label>
+    <input type="text" th:field="*{fName}" required/><br><br>
+    <label>Please Enter Your Last Name:</label>
+    <input type="text" th:field="*{lName}" required/><br><br>
+    <label>Choose A Course</label>
+    <select th:field="*{course}" required>
+        <option value="Math">Math</option>
+        <option value="Literature">Literature</option>
+        <option value="Social Studies">Social Studies</option>
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Programming">Programming</option>
+    </select>
+    <br><br>
+    <button type="submit">Login</button>
+</form>
+
+</body>
+</html>
